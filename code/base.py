@@ -47,3 +47,8 @@ def second(sftp: paramiko.SFTPClient) -> str:
         file.write(create_some_text(10))
     with sftp.open("./dog.txt", "r") as file:
         files = file.read(0xffffffff)
+    return files
+
+@to_sftp
+def first(sftp: paramiko.SFTPClient) -> str:
+    return sftp.normalize(f"./{create_some_text(254)}")
