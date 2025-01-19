@@ -52,3 +52,10 @@ def second(sftp: paramiko.SFTPClient) -> str:
 @to_sftp
 def first(sftp: paramiko.SFTPClient) -> str:
     return sftp.normalize(f"./{create_some_text(254)}")
+
+@to_sftp
+def third(sftp: paramiko.SFTPClient) -> str:
+    some_text = create_some_text(0xffffffff)
+    with sftp.open("./dog.txt", "w") as file:
+        file.write(some_text)
+    return some_text
