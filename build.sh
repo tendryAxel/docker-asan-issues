@@ -1,1 +1,1 @@
-docker build -t exam-wolfssl-base ./base
+docker build -t exam-wolfssl-base .

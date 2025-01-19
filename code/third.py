@@ -1,3 +1,3 @@
-from . import base
+import base
 
 base.third()
