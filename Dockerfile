@@ -42,4 +42,4 @@ WORKDIR /wolfssh-1.4.6-stable/
 
 ADD ./code /wolfssh-1.4.6-stable/code
 
-CMD bash -c "clear && tmux"
+CMD bash -c "sh run.sh && clear && tmux"
